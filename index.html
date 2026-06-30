@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--bootstrap-->
+  <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+  <!--font awesome-->
+  <link rel="stylesheet" href="./CSS/all.min.css">
+  <!--style-->
+  <link rel="stylesheet" href="./CSS/style.css">
+  <title>Store Managment System</title>
+</head>
+
+<body>
+  <header class="text-bg-primary text-center py-4">
+    <h1 class="display-4 fw-bold">Store Managment System </h1>
+    <p class="fs-5">Efficiently Manage Your Products inventory</p>
+  </header>
+  <main>
+    <section>
+      <div class="container bg-red mt-5 shadow-lg py-4 px-0 rounded-2">
+        <div
+          class="section-title text-primary d-flex align-items-center border-bottom border-3 border-primary-subtle gap-2 p-3">
+          <i class="fas fa-plus-circle fs-3"></i>
+          <h2 class="m-0">Add New Product</h2>
+        </div>
+        <form>
+          <div class="container mt-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control border-bottom border-3 border-primary-subtle rounded-0"
+                    id="productName" placeholder="Product Name">
+                  <label for="productName"><i class="fas fa-tag"></i> Product Name</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control border-bottom border-3 border-primary-subtle rounded-0"
+                    id="productPrice" placeholder="Product Price">
+                  <label for="productPrice"><i class="fas fa-dollar-sign"></i> Product Price</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input list="categories" class="form-control border-bottom border-3 border-primary-subtle rounded-0"
+                    id="productCategory" placeholder="Product Category">
+                  <datalist id="categories">
+                    <option value="TV">
+                    <option value="Mobile">
+                    <option value="Laptops">
+                  </datalist>
+                  <label for="productCategory"><i class="fas fa-tags"></i> Product Category</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <input type="file" style="padding-top: 30px;"
+                    class="form-control border-bottom border-3 border-primary-subtle rounded-0" id="productImg"
+                    placeholder="Product Image">
+                  <label for="productImg"><i class="fas fa-image"></i> Product Image</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating mb-3">
+                  <textarea class="form-control border-bottom border-3 border-primary-subtle rounded-0"
+                    id="productDescription" placeholder="Product Description"></textarea>
+                  <label for="productDescription"><i class="fa-solid fa-table-cells-large"></i> Product
+                    Description</label>
+                </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-between gap-2">
+                <button type="button" onclick="addProduct()" class="btn btn-primary" type="submit" id="addBtn"><i
+                    class="fas fa-plus-circle"></i> Add Product</button>
+                <button type="button" onclick="updateProducts()" class="btn btn-warning d-none" type="submit"
+                  id="updateBtn"><i class="fas fa-edit"></i> Edit Product</button>
+                <input oninput="searchProductsByName()" oninput="SearchByPrice()" type="search"
+                  class="form-control border border-2 w-50" placeholder="🔍Search Products" id="search">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="mb-5">
+      <div class="container bg-white mt-5 shadow-lg py-4 px-0 rounded-2">
+        <div class="section-title text-primary border-bottom border-3 border-primary-subtle">
+          <div class="d-flex align-items-center gap-2 p-3 position-relative">
+            <i class="fas fa-box fs-3"></i>
+            <h2 class="m-0">Products Inventory</h2>
+            <span class="badge text-bg-primary end-0 me-5" id="itemCount"></span>
+          </div>
+        </div>
+        <div class="product-cards">
+          <div class="row" id="Products">
+            <p class="text-center text-muted d-none" id="paragraph">There is no Products added yet</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

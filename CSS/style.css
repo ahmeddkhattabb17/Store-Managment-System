@@ -1,0 +1,23 @@
+body {
+  font-family: 'Font';
+}
+
+.form-control {
+  border: unset;
+
+}
+
+.form-control:focus {
+  box-shadow: unset;
+
+}
+
+.product-cards img {
+height: 300px;
+object-fit: contain;
+}
+
+@font-face {
+  font-family: 'Font';
+  src: url('../Font/Alan_Sans/AlanSans-VariableFont_wght.ttf') format('truetype');
+}
